@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - CELC</title>
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="schedule.html" class="nav-link">Schedule</a>
+            <a href="about.html" class="nav-link">About</a>
+        </div>
+    </nav>
+
+    <main class="schedule-page">
+        <h1 class="page-title">Schedule</h1>
+        <div class="schedule-container">
+            <img src="images/schedule.png" alt="CELC Schedule" class="schedule-image">
+        </div>
+    </main>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            color: #2a2a2a;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: #512685;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transform: translateX(-50%);
+            transition: width 0.4s ease;
+        }
+
+        .nav-link:hover {
+            color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .schedule-page {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: white;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: #4c07ab;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .schedule-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .schedule-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 32px;
+            }
+
+            .nav-container {
+                gap: 15px;
+            }
+
+            .nav-link {
+                font-size: 12px;
+                padding: 6px 15px;
+            }
+        }
+    </style>
+</body>
+</html>

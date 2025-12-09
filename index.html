@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELC</title>
+    <link rel="stylesheet" href="celc.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href=schedule.html class="nav-link">Schedule</a>
+            <a href=about.html class="nav-link">About</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="number left">20</div>
+        <div class="logo-container">
+            <img src="images/celc logo.png" alt="CELC Logo" class="logo">
+        </div>
+        <div class="number right">26</div>
+    </main>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #512685;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transform: translateX(-50%);
+            transition: width 0.4s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px;
+            position: relative;
+            color: white;
+        }
+
+        .number {
+            font-size: 50vh;
+            font-weight: 900;
+            color: white;
+            opacity: 1;
+            user-select: none;
+            position: absolute;
+            line-height: 0.85;
+            font-family: 'Impact', 'Arial Narrow', sans-serif;
+            font-stretch: condensed;
+        }
+
+        .number.left {
+            left: calc(50% - 45vw);
+            color: white;
+        }
+
+        .number.right {
+            right: calc(50% - 45vw);
+            color: white;
+        }
+
+        .logo-container {
+            max-width: 35vw;
+            width: 95%;
+            max-height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
+            max-height: 60vh;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(255, 255, 255, 0)) brightness(5);
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .number {
+                font-size: 60px;
+            }
+            
+            .number.left {
+                left: 20px;
+            }
+            
+            .number.right {
+                right: 20px;
+            }
+            
+            .logo-container {
+                max-width: 300px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
