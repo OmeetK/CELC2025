@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sponsors - CELC</title>
-    <link rel="stylesheet" href="celc.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -94,6 +93,7 @@
             font-family: 'Inter', 'Arial', sans-serif;
             background: #000000 url('images/team-back.png') center center no-repeat;
             background-size: cover;
+            background-attachment: fixed;
             color: white;
             overflow-x: hidden;
             min-height: 100vh;
@@ -118,6 +118,7 @@
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
+            padding: 0 15px;
         }
 
         .nav-link {
@@ -171,7 +172,7 @@
             font-size: 18px;
             font-weight: 400;
             color: #A8A8A8;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             letter-spacing: 1px;
         }
 
@@ -266,7 +267,6 @@
         .sponsor-grid.gold .sponsor-logo {
             width: 350px;
             height: 190px;
-            
         }
 
         .sponsor-grid.silver .sponsor-logo {
@@ -292,32 +292,121 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .sponsor-logo:hover {
+            transform: translateY(-5px);
         }
 
         .sponsor-logo img {
-            max-width: 120%;
-            max-height: 120%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
         }
 
-        @media (max-width: 768px) {
+        /* Tablet styles */
+        @media (max-width: 1024px) {
             .page-title {
-                font-size: 36px;
+                font-size: 40px;
+                letter-spacing: 3px;
             }
 
             .page-subtitle {
-                font-size: 16px;
-                margin-bottom: 40px;
+                font-size: 17px;
+                margin-bottom: 50px;
             }
 
             .sponsor-tier {
-                padding: 0 20px;
-                margin-bottom: 40px;
+                padding: 40px 30px;
+                margin-bottom: 35px;
             }
 
             .tier-title {
-                font-size: 22px;
+                font-size: 24px;
+                margin-bottom: 35px;
+                letter-spacing: 2px;
+            }
+
+            .sponsor-grid {
+                gap: 45px;
+            }
+
+            .sponsor-grid.legacy .sponsor-logo {
+                width: 350px;
+                height: 175px;
+            }
+
+            .sponsor-grid.gold .sponsor-logo {
+                width: 300px;
+                height: 165px;
+            }
+
+            .sponsor-grid.silver .sponsor-logo {
+                width: 250px;
+                height: 125px;
+            }
+
+            .sponsor-grid.bronze .sponsor-logo {
+                width: 220px;
+                height: 110px;
+            }
+
+            .sponsor-grid.iron .sponsor-logo {
+                width: 180px;
+                height: 90px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .nav-link {
+                font-size: 11px;
+                padding: 6px 10px;
+                letter-spacing: 1px;
+            }
+
+            .sponsors-page {
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+
+            .page-title {
+                font-size: 32px;
+                letter-spacing: 2px;
+                padding: 0 20px;
+            }
+
+            .page-subtitle {
+                font-size: 15px;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+
+            .sponsor-tier {
+                padding: 35px 20px;
+                margin: 0 15px 30px;
+                border-radius: 12px;
+            }
+
+            .tier-title {
+                font-size: 20px;
                 margin-bottom: 30px;
+                letter-spacing: 1.5px;
+            }
+
+            .tier-title::after {
+                width: 80px;
+                height: 2px;
             }
 
             .sponsor-grid {
@@ -325,33 +414,175 @@
             }
 
             .sponsor-grid.legacy .sponsor-logo {
-                width: 300px;
-                height: 150px;
-            }
-
-            .sponsor-grid.gold .sponsor-logo {
-                width: 320px;
+                width: 280px;
                 height: 140px;
             }
 
+            .sponsor-grid.gold .sponsor-logo {
+                width: 260px;
+                height: 130px;
+            }
+
             .sponsor-grid.silver .sponsor-logo {
+                width: 220px;
+                height: 110px;
+            }
+
+            .sponsor-grid.bronze .sponsor-logo {
+                width: 190px;
+                height: 95px;
+            }
+
+            .sponsor-grid.iron .sponsor-logo {
+                width: 160px;
+                height: 80px;
+            }
+
+            .sponsor-logo {
+                padding: 20px;
+                border-radius: 10px;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 9px;
+                padding: 5px 8px;
+            }
+
+            .sponsors-page {
+                padding-top: 70px;
+            }
+
+            .page-title {
+                font-size: 26px;
+                letter-spacing: 1.5px;
+            }
+
+            .page-subtitle {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .sponsor-tier {
+                padding: 30px 15px;
+                margin: 0 10px 25px;
+            }
+
+            .tier-title {
+                font-size: 18px;
+                margin-bottom: 25px;
+                letter-spacing: 1px;
+            }
+
+            .tier-title::after {
+                width: 60px;
+            }
+
+            .sponsor-grid {
+                gap: 20px;
+            }
+
+            .sponsor-grid.legacy .sponsor-logo {
                 width: 240px;
                 height: 120px;
             }
 
-            .sponsor-grid.bronze .sponsor-logo {
-                width: 200px;
-                height: 100px;
+            .sponsor-grid.gold .sponsor-logo {
+                width: 220px;
+                height: 110px;
             }
 
-            .sponsor-grid.iron .sponsor-logo {
+            .sponsor-grid.silver .sponsor-logo {
                 width: 180px;
                 height: 90px;
             }
 
+            .sponsor-grid.bronze .sponsor-logo {
+                width: 160px;
+                height: 80px;
+            }
+
+            .sponsor-grid.iron .sponsor-logo {
+                width: 140px;
+                height: 70px;
+            }
+
+            .sponsor-logo {
+                padding: 15px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
             .nav-link {
-                font-size: 11px;
-                padding: 6px 10px;
+                font-size: 8px;
+                padding: 4px 6px;
+            }
+
+            .page-title {
+                font-size: 22px;
+            }
+
+            .page-subtitle {
+                font-size: 13px;
+            }
+
+            .tier-title {
+                font-size: 16px;
+            }
+
+            .sponsor-grid.legacy .sponsor-logo {
+                width: 200px;
+                height: 100px;
+            }
+
+            .sponsor-grid.gold .sponsor-logo {
+                width: 180px;
+                height: 90px;
+            }
+
+            .sponsor-grid.silver .sponsor-logo {
+                width: 150px;
+                height: 75px;
+            }
+
+            .sponsor-grid.bronze .sponsor-logo {
+                width: 130px;
+                height: 65px;
+            }
+
+            .sponsor-grid.iron .sponsor-logo {
+                width: 120px;
+                height: 60px;
+            }
+        }
+
+        /* Landscape orientation for phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .sponsors-page {
+                padding-top: 70px;
+            }
+
+            .page-title {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+
+            .page-subtitle {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .sponsor-tier {
+                padding: 25px 20px;
+                margin-bottom: 20px;
+            }
+
+            .tier-title {
+                font-size: 18px;
+                margin-bottom: 20px;
             }
         }
     </style>

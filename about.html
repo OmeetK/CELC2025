@@ -11,7 +11,6 @@
         <div class="nav-container">
             <a href="index.html" class="nav-link">Home</a>
             <a href="schedule.html" class="nav-link">Schedule</a>
-            <a href="about.html" class="nav-link">About</a>
             <a href="team.html" class="nav-link">Team</a>
             <a href="sponsors.html" class="nav-link">Sponsors</a>
         </div>
@@ -117,6 +116,7 @@
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
+            padding: 0 15px;
         }
 
         .nav-link {
@@ -156,7 +156,7 @@
 
         .about-banner {
             width: 100%;
-            height: 250px;
+            height: 300px;
             overflow: hidden;
             position: relative;
         }
@@ -165,6 +165,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
             background: linear-gradient(135deg, #512685 0%, #00BCD4 100%);
         }
@@ -233,7 +234,7 @@
 
         .track-section {
             position: relative;
-            min-height: 400px;
+            min-height: 450px;
             display: flex;
             align-items: center;
             padding: 80px 0;
@@ -303,7 +304,48 @@
             color: #000000;
         }
 
+        /* Tablet styles */
         @media (max-width: 1024px) {
+            .about-banner {
+                height: 220px;
+            }
+
+            .what-is-celc,
+            .conference-theme {
+                padding: 60px 50px;
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .what-is-celc p,
+            .conference-theme p {
+                font-size: 18px;
+            }
+
+            .track-section {
+                min-height: 380px;
+                padding: 70px 0;
+            }
+
+            .track-content {
+                padding: 50px 40px;
+                max-width: 700px;
+            }
+
+            .track-title {
+                font-size: 28px;
+            }
+
+            .track-text {
+                font-size: 17px;
+            }
+
             .governance-section .track-content,
             .leadership-section .track-content {
                 margin-left: 0;
@@ -316,18 +358,25 @@
             }
         }
 
+        /* Mobile styles */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
             .about-banner {
-                height: 150px;
+                height: 180px;
             }
 
             .nav-container {
                 gap: 15px;
+                padding: 0 10px;
             }
 
             .nav-link {
                 font-size: 11px;
                 padding: 6px 10px;
+                letter-spacing: 1px;
             }
 
             .what-is-celc,
@@ -338,27 +387,30 @@
             .main-title {
                 font-size: 28px;
                 margin-bottom: 30px;
+                letter-spacing: 2px;
             }
 
             .section-title {
                 font-size: 26px;
                 margin-bottom: 30px;
+                letter-spacing: 1.5px;
             }
 
             .what-is-celc p,
             .conference-theme p {
                 font-size: 17px;
                 text-align: left;
+                line-height: 1.7;
             }
 
             .track-section {
-                min-height: 350px;
-                padding: 60px 0;
+                min-height: 320px;
+                padding: 50px 0;
             }
 
             .track-content {
-                padding: 40px 30px;
-                margin: 0 20px !important;
+                padding: 40px 25px;
+                margin: 0 15px !important;
                 max-width: 100%;
             }
             
@@ -373,6 +425,70 @@
 
             .track-text {
                 font-size: 16px;
+                line-height: 1.7;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .about-banner {
+                height: 150px;
+            }
+
+            .nav-link {
+                font-size: 9px;
+                padding: 5px 8px;
+            }
+
+            .what-is-celc,
+            .conference-theme {
+                padding: 40px 20px;
+            }
+
+            .main-title {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 25px;
+            }
+
+            .what-is-celc p,
+            .conference-theme p {
+                font-size: 15px;
+            }
+
+            .track-section {
+                min-height: 280px;
+                padding: 40px 0;
+            }
+
+            .track-content {
+                padding: 30px 20px;
+                margin: 0 10px !important;
+            }
+
+            .track-title {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .track-text {
+                font-size: 15px;
+            }
+        }
+
+        /* Landscape orientation for phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .about-banner {
+                height: 150px;
+            }
+
+            .track-section {
+                min-height: 250px;
+                padding: 40px 0;
             }
         }
     </style>

@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule - CELC</title>
-    <link rel="stylesheet" href="celc.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="schedule.html" class="nav-link">Schedule</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="team.html" class="nav-link">Team</a>
             <a href="sponsors.html" class="nav-link">Sponsors</a>
@@ -90,6 +88,7 @@
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
+            padding: 0 15px;
         }
 
         .nav-link {
@@ -146,6 +145,7 @@
             background: transparent;
             position: relative;
             z-index: 1;
+            padding-bottom: 60px;
         }
 
         .page-title {
@@ -162,7 +162,7 @@
         .schedule-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px 60px;
+            padding: 0 40px;
             position: relative;
             z-index: 1;
         }
@@ -173,36 +173,137 @@
             display: block;
             border-radius: 8px;
             background: white;
+            box-shadow: 0 4px 20px rgba(81, 38, 133, 0.1);
         }
 
-        @media (max-width: 768px) {
+        /* Tablet styles */
+        @media (max-width: 1024px) {
             .page-title {
-                font-size: 28px;
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+
+            #currentDateTime {
+                font-size: 20px;
+            }
+
+            .schedule-container {
+                padding: 0 30px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
             }
 
             .nav-container {
                 gap: 15px;
+                padding: 0 10px;
             }
 
             .nav-link {
                 font-size: 11px;
                 padding: 6px 10px;
-            }
-
-            #currentDateTime {
-                font-size: 18px;
+                letter-spacing: 1px;
             }
 
             .datetime-banner {
-                padding: 15px;
+                top: 50px;
+                padding: 15px 10px;
+            }
+
+            #currentDateTime {
+                font-size: 14px;
+                letter-spacing: 0.5px;
             }
 
             .schedule-page {
-                padding-top: 120px;
+                padding-top: 110px;
+                padding-bottom: 40px;
+            }
+
+            .page-title {
+                font-size: 26px;
+                margin-bottom: 30px;
+                letter-spacing: 1.5px;
+                padding: 0 20px;
             }
 
             .schedule-container {
-                padding: 0 20px 40px;
+                padding: 0 20px;
+            }
+
+            .schedule-image {
+                border-radius: 6px;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 9px;
+                padding: 5px 8px;
+            }
+
+            .datetime-banner {
+                padding: 12px 8px;
+            }
+
+            #currentDateTime {
+                font-size: 11px;
+                letter-spacing: 0.3px;
+            }
+
+            .schedule-page {
+                padding-top: 100px;
+            }
+
+            .page-title {
+                font-size: 22px;
+                margin-bottom: 25px;
+                letter-spacing: 1px;
+            }
+
+            .schedule-container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Landscape orientation for phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .datetime-banner {
+                padding: 10px;
+            }
+
+            #currentDateTime {
+                font-size: 12px;
+            }
+
+            .schedule-page {
+                padding-top: 95px;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .nav-link {
+                font-size: 8px;
+                padding: 4px 6px;
+            }
+
+            #currentDateTime {
+                font-size: 10px;
+            }
+
+            .page-title {
+                font-size: 20px;
             }
         }
     </style>

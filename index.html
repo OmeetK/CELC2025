@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CELC 2026</title>
-    <link rel="stylesheet" href="celc.css">
 </head>
 <body>
     <nav class="navbar">
@@ -101,6 +100,7 @@
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
+            padding: 0 15px;
         }
 
         .nav-link {
@@ -152,6 +152,7 @@
             display: flex;
             gap: 0;
             animation: scroll 30s linear infinite;
+            will-change: transform;
         }
 
         .image-track img {
@@ -178,10 +179,11 @@
             min-height: calc(100vh - 360px);
             padding: 40px 20px;
             position: relative;
+            overflow: hidden;
         }
 
         .number {
-            font-size: 45vh;
+            font-size: clamp(150px, 45vh, 600px);
             font-weight: 900;
             color: white;
             opacity: 0.25;
@@ -201,12 +203,14 @@
         }
 
         .logo-container {
-            max-width: 35vw;
-            width: 35%;
+            max-width: 500px;
+            width: 35vw;
             max-height: 55vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             z-index: 10;
+            padding: 20px;
         }
 
         .logo {
@@ -229,9 +233,54 @@
             }
         }
 
-        @media (max-width: 768px) {
+        /* Tablet styles */
+        @media (max-width: 1024px) {
             .number {
-                font-size: 30vh;
+                font-size: clamp(120px, 35vh, 400px);
+            }
+
+            .logo-container {
+                max-width: 350px;
+                width: 40vw;
+            }
+
+            .image-track img {
+                height: 120px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .nav-link {
+                font-size: 11px;
+                padding: 6px 10px;
+                letter-spacing: 1px;
+            }
+
+            .image-top {
+                margin-top: 50px;
+            }
+
+            .image-track img {
+                height: 100px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 300px);
+                padding: 30px 10px;
+            }
+
+            .number {
+                font-size: clamp(80px, 25vh, 250px);
                 opacity: 0.2;
             }
             
@@ -244,22 +293,45 @@
             }
             
             .logo-container {
-                max-width: 50vw;
-                width: 50%;
+                max-width: 250px;
+                width: 50vw;
+                padding: 10px;
             }
+        }
 
-            .nav-container {
-                gap: 15px;
-            }
-
+        /* Very small mobile styles */
+        @media (max-width: 480px) {
             .nav-link {
-                font-size: 11px;
-                padding: 6px 10px;
+                font-size: 9px;
+                padding: 5px 8px;
             }
 
             .image-track img {
-                height: 100px;
-                width: auto;
+                height: 80px;
+            }
+
+            .number {
+                font-size: clamp(60px, 20vh, 180px);
+            }
+
+            .logo-container {
+                max-width: 200px;
+                width: 45vw;
+            }
+        }
+
+        /* Landscape phone orientation */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: calc(100vh - 200px);
+            }
+
+            .number {
+                font-size: clamp(100px, 30vh, 300px);
+            }
+
+            .image-track img {
+                height: 80px;
             }
         }
     </style>

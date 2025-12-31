@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team - CELC</title>
-    <link rel="stylesheet" href="celc.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -111,6 +110,7 @@
             background-attachment: fixed;
             color: white;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .navbar {
@@ -131,6 +131,7 @@
             max-width: 1200px;
             margin: 0 auto;
             flex-wrap: wrap;
+            padding: 0 15px;
         }
 
         .nav-link {
@@ -254,40 +255,245 @@
             text-decoration: none;
             transition: color 0.3s ease;
             display: inline-block;
+            word-break: break-word;
         }
 
         .member-email:hover {
             color: rgba(255, 255, 255, 0.8);
         }
 
-        @media (max-width: 768px) {
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .team-page {
+                padding-top: 90px;
+                padding-bottom: 70px;
+            }
+
             .page-title {
-                font-size: 36px;
+                font-size: 42px;
+                letter-spacing: 2.5px;
             }
 
             .page-subtitle {
-                font-size: 16px;
-                margin-bottom: 40px;
+                font-size: 17px;
+                margin-bottom: 50px;
             }
 
             .team-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 40px;
-                padding: 0 20px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 45px;
+                padding: 0 35px;
             }
 
             .member-photo {
-                width: 180px;
-                height: 180px;
+                width: 190px;
+                height: 190px;
+            }
+
+            .member-role {
+                font-size: 16px;
             }
 
             .member-name {
-                font-size: 20px;
+                font-size: 21px;
+            }
+
+            .member-email {
+                font-size: 13px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                gap: 15px;
+                padding: 0 10px;
             }
 
             .nav-link {
                 font-size: 11px;
                 padding: 6px 10px;
+                letter-spacing: 1px;
+            }
+
+            .team-page {
+                padding-top: 80px;
+                padding-bottom: 60px;
+            }
+
+            .page-title {
+                font-size: 34px;
+                letter-spacing: 2px;
+                padding: 0 20px;
+            }
+
+            .page-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 40px;
+                padding: 0 25px;
+            }
+
+            .member-photo {
+                width: 170px;
+                height: 170px;
+                margin-bottom: 20px;
+            }
+
+            .member-role {
+                font-size: 15px;
+                letter-spacing: 1.5px;
+            }
+
+            .member-name {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .member-email {
+                font-size: 13px;
+            }
+
+            .team-member:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .nav-link {
+                font-size: 9px;
+                padding: 5px 8px;
+            }
+
+            .team-page {
+                padding-top: 70px;
+                padding-bottom: 50px;
+            }
+
+            .page-title {
+                font-size: 28px;
+                letter-spacing: 1.5px;
+            }
+
+            .page-subtitle {
+                font-size: 15px;
+                margin-bottom: 35px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 0 20px;
+            }
+
+            .member-photo {
+                width: 160px;
+                height: 160px;
+                margin-bottom: 18px;
+            }
+
+            .member-role {
+                font-size: 14px;
+                letter-spacing: 1.2px;
+                margin-bottom: 6px;
+            }
+
+            .member-name {
+                font-size: 19px;
+                margin-bottom: 10px;
+            }
+
+            .member-email {
+                font-size: 12px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .nav-link {
+                font-size: 8px;
+                padding: 4px 6px;
+            }
+
+            .page-title {
+                font-size: 24px;
+            }
+
+            .page-subtitle {
+                font-size: 14px;
+            }
+
+            .team-grid {
+                padding: 0 15px;
+                gap: 30px;
+            }
+
+            .member-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .member-role {
+                font-size: 13px;
+            }
+
+            .member-name {
+                font-size: 18px;
+            }
+
+            .member-email {
+                font-size: 11px;
+            }
+        }
+
+        /* Landscape orientation for phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .team-page {
+                padding-top: 70px;
+                padding-bottom: 40px;
+            }
+
+            .page-title {
+                font-size: 30px;
+                margin-bottom: 8px;
+            }
+
+            .page-subtitle {
+                font-size: 15px;
+                margin-bottom: 30px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+            }
+
+            .member-photo {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 15px;
+            }
+
+            .member-role {
+                font-size: 13px;
+            }
+
+            .member-name {
+                font-size: 17px;
+            }
+
+            .member-email {
+                font-size: 12px;
             }
         }
     </style>
