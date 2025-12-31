@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule - CELC</title>
     <link rel="stylesheet" href="celc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -12,16 +13,19 @@
             <a href="index.html" class="nav-link">Home</a>
             <a href="schedule.html" class="nav-link">Schedule</a>
             <a href="about.html" class="nav-link">About</a>
+            <a href="team.html" class="nav-link">Team</a>
+            <a href="sponsors.html" class="nav-link">Sponsors</a>
         </div>
     </nav>
 
+    <div class="datetime-banner">
+        <div id="currentDateTime"></div>
+    </div>
+
     <main class="schedule-page">
-        <h1 class="page-title">Schedule</h1>
+        <h1 class="page-title">Conference Schedule</h1>
         <div class="schedule-container">
-            <div class="message-box">
-                <p class="message-text">The schedule has not been uploaded yet.</p>
-                <p class="contact-text">Contact us: <a href="mailto:chair@celc.cfes.ca">chair@celc.cfes.ca</a></p>
-            </div>
+            <img src="images/schedule.png" alt="CELC 2026 Schedule" class="schedule-image">
         </div>
     </main>
 
@@ -33,9 +37,39 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: white;
-            color: #512685;
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: #ffffff;
+            color: #2a2a2a;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, rgba(81, 38, 133, 0.02) 1px, transparent 1px),
+                linear-gradient(rgba(81, 38, 133, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .navbar {
@@ -44,125 +78,106 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background:#512685;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            background: #512685;
+            border-bottom: 2px solid rgba(0, 188, 212, 0.3);
             padding: 15px 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .nav-link {
             color: white;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 8px 20px;
+            padding: 8px 15px;
             position: relative;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
-        .nav-link::before {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 50%;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            background: white;
-            transform: translateX(-50%);
-            transition: width 0.4s ease;
+            background: #00BCD4;
+            transition: width 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: #f0f0f0;
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
+        .nav-link:hover::after {
             width: 100%;
         }
 
+        .datetime-banner {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: linear-gradient(135deg, #512685 0%, #6b3fa0 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #00BCD4;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #currentDateTime {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 1px;
+        }
+
         .schedule-page {
-            padding-top: 80px;
+            padding-top: 140px;
             min-height: 100vh;
-            background: white;
+            background: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .page-title {
             text-align: center;
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 900;
             color: #512685;
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
         }
 
         .schedule-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60vh;
-        }
-
-        .message-box {
-            background: #f8f8f8;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 50px 60px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            max-width: 600px;
-        }
-
-        .message-text {
-            font-size: 24px;
-            font-weight: 600;
-            color: #512685;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
-
-        .contact-text {
-            font-size: 18px;
-            color: #555;
-            margin: 0;
-        }
-
-        .contact-text a {
-            color: #2a2a2a;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid #2a2a2a;
-            transition: all 0.3s ease;
-        }
-
-        .contact-text a:hover {
-            color: #555;
-            border-bottom-color: #555;
+            padding: 0 40px 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .schedule-image {
             width: 100%;
             height: auto;
             display: block;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background: white;
         }
 
         @media (max-width: 768px) {
             .page-title {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .nav-container {
@@ -170,22 +185,53 @@
             }
 
             .nav-link {
-                font-size: 12px;
-                padding: 6px 15px;
+                font-size: 11px;
+                padding: 6px 10px;
             }
 
-            .message-box {
-                padding: 30px 25px;
-            }
-
-            .message-text {
+            #currentDateTime {
                 font-size: 18px;
             }
 
-            .contact-text {
-                font-size: 16px;
+            .datetime-banner {
+                padding: 15px;
+            }
+
+            .schedule-page {
+                padding-top: 120px;
+            }
+
+            .schedule-container {
+                padding: 0 20px 40px;
             }
         }
     </style>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                timeZone: 'America/New_York'
+            };
+            const date = now.toLocaleDateString('en-US', options);
+            
+            const estTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+            let hours = estTime.getHours();
+            const minutes = estTime.getMinutes().toString().padStart(2, '0');
+            const seconds = estTime.getSeconds().toString().padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            
+            const timeString = `${date} • ${hours}:${minutes}:${seconds} ${ampm} EST`;
+            document.getElementById('currentDateTime').textContent = timeString;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>

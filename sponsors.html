@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors - CELC</title>
+    <link rel="stylesheet" href="celc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="schedule.html" class="nav-link">Schedule</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="team.html" class="nav-link">Team</a>
+            <a href="sponsors.html" class="nav-link">Sponsors</a>
+        </div>
+    </nav>
+
+    <main class="sponsors-page">
+        <h1 class="page-title">OUR SPONSORS</h1>
+        <p class="page-subtitle">Thank you to our valued partners</p>
+
+        <section class="sponsor-tier">
+            <h2 class="tier-title">LEGACY SPONSORS</h2>
+            <div class="sponsor-grid legacy">
+                <div class="sponsor-logo">
+                    <img src="images/acec.png" alt="ACEC">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="images/engineerscanada.png" alt="Engineers Canada">
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-tier">
+            <h2 class="tier-title gold">GOLD SPONSORS</h2>
+            <div class="sponsor-grid gold">
+                <div class="sponsor-logo">
+                    <img src="images/eng.png" alt="Sponsor">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="images/usc.png" alt="Sponsor">
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-tier">
+            <h2 class="tier-title silver">SILVER SPONSORS</h2>
+            <div class="sponsor-grid silver">
+                <div class="sponsor-logo">
+                    <img src="images/candu.png" alt="Sponsor">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="images/colas.png" alt="Sponsor">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="images/nrc.png" alt="Sponsor">
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-tier">
+            <h2 class="tier-title bronze">BRONZE SPONSORS</h2>
+            <div class="sponsor-grid bronze">
+                <div class="sponsor-logo">
+                    <img src="images/nationalbank.png" alt="Sponsor">
+                </div>
+            </div>
+        </section>
+
+        <section class="sponsor-tier">
+            <h2 class="tier-title iron">IRON SPONSORS</h2>
+            <div class="sponsor-grid iron">
+                <div class="sponsor-logo">
+                    <img src="images/linamer.png" alt="Sponsor">
+                </div>
+                <div class="sponsor-logo">
+                    <img src="images/enbridge.png" alt="Sponsor">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: #000000 url('images/team-back.png') center center no-repeat;
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: #512685;
+            border-bottom: 2px solid rgba(0, 188, 212, 0.3);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .sponsors-page {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            color: #A8A8A8;
+            margin-bottom: 80px;
+            letter-spacing: 1px;
+        }
+
+        .sponsor-tier {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 50px 40px;
+            border-radius: 16px;
+        }
+
+        .sponsor-tier:nth-child(odd) {
+            background: #512685;
+        }
+
+        .sponsor-tier:nth-child(even) {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .sponsor-tier:nth-child(even) .tier-title {
+            color: #512685;
+        }
+
+        .sponsor-tier:nth-child(even) .tier-title::after {
+            background: #512685;
+        }
+
+        .sponsor-tier:nth-child(even) .tier-title.gold::after {
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+        }
+
+        .sponsor-tier:nth-child(even) .tier-title.bronze::after {
+            background: linear-gradient(90deg, #CD7F32, #B87333);
+        }
+
+        .sponsor-tier:nth-child(even) .tier-title.iron::after {
+            background: linear-gradient(90deg, #6B7280, #4B5563);
+        }
+
+        .tier-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .tier-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: white;
+        }
+
+        .tier-title.gold::after {
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+        }
+
+        .tier-title.silver::after {
+            background: linear-gradient(90deg, #C0C0C0, #A8A8A8);
+        }
+
+        .tier-title.bronze::after {
+            background: linear-gradient(90deg, #CD7F32, #B87333);
+        }
+
+        .tier-title.iron::after {
+            background: linear-gradient(90deg, #6B7280, #4B5563);
+        }
+
+        .sponsor-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .sponsor-grid.legacy .sponsor-logo {
+            width: 400px;
+            height: 200px;
+        }
+
+        .sponsor-grid.gold .sponsor-logo {
+            width: 350px;
+            height: 190px;
+            
+        }
+
+        .sponsor-grid.silver .sponsor-logo {
+            width: 280px;
+            height: 140px;
+        }
+
+        .sponsor-grid.bronze .sponsor-logo {
+            width: 240px;
+            height: 120px;
+        }
+
+        .sponsor-grid.iron .sponsor-logo {
+            width: 200px;
+            height: 100px;
+        }
+
+        .sponsor-logo {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .sponsor-logo img {
+            max-width: 120%;
+            max-height: 120%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+            }
+
+            .page-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            .sponsor-tier {
+                padding: 0 20px;
+                margin-bottom: 40px;
+            }
+
+            .tier-title {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .sponsor-grid {
+                gap: 30px;
+            }
+
+            .sponsor-grid.legacy .sponsor-logo {
+                width: 300px;
+                height: 150px;
+            }
+
+            .sponsor-grid.gold .sponsor-logo {
+                width: 320px;
+                height: 140px;
+            }
+
+            .sponsor-grid.silver .sponsor-logo {
+                width: 240px;
+                height: 120px;
+            }
+
+            .sponsor-grid.bronze .sponsor-logo {
+                width: 200px;
+                height: 100px;
+            }
+
+            .sponsor-grid.iron .sponsor-logo {
+                width: 180px;
+                height: 90px;
+            }
+
+            .nav-link {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+    </style>
+</body>
+</html>

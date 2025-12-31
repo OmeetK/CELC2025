@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - CELC</title>
-    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -12,18 +12,47 @@
             <a href="index.html" class="nav-link">Home</a>
             <a href="schedule.html" class="nav-link">Schedule</a>
             <a href="about.html" class="nav-link">About</a>
+            <a href="team.html" class="nav-link">Team</a>
+            <a href="sponsors.html" class="nav-link">Sponsors</a>
         </div>
     </nav>
 
     <main class="about-page">
-        <h1 class="page-title">About</h1>
-        <div class="about-content">
-            <p class="about-text">
-                The Canadian Engineering Leadership Conference (CELC) is an annual, bilingual, student-run event that functions as the annual general meeting of the Canadian Federation of Engineering Students (CFES) and also a national platform for students to collaborate with, and learn from, industry partners. Each year, CELC brings together 200 delegates from over 40 engineering schools across Canada, offering a unique opportunity to engage with student leaders from every institution and discipline within the engineering community.
-            </p>
+        <div class="about-banner">
+            <img src="images/about.jpg" alt="CELC Conference" class="about-image">
         </div>
-        <div class="image-container">
-            <img src="images/celc picture.png" alt="CELC Event" class="about-image">
+
+        <div class="content-wrapper">
+            <section class="what-is-celc">
+                <h1 class="main-title">What is CELC?</h1>
+                <p>The Canadian Engineering Leadership Conference (CELC) is Canada's largest undergraduate engineering conference, bringing together student leaders from over 46 schools annually. Organized by the Canadian Federation of Engineering Students (CFES), CELC creates a dynamic space where passionate engineering students exchange ideas, develop leadership skills, and shape the future of the profession. Through interactive workshops, thought-provoking panels, engaging discussions, and social events, delegates learn from peers and industry leaders while exploring what success means to them. CELC 2026 challenges participants to rethink engineering leadership and inspires them to build a purposeful, inclusive, and sustainable future for the field.</p>
+            </section>
+
+            <section class="conference-theme">
+                <h2 class="section-title">Conference Theme</h2>
+                <p>Success is not defined by one thing, rather, it's a dynamic composite of intersecting factors that will look different for each person. As engineers, it is important to define what we hope to achieve while considering the people we impact along the way to ensure our values align with our visions. This year's theme, <span class="highlight">Track to Success</span>, invites delegates to discover their own version of success and traverse the winding pathways that can lead them towards their goals. Through collaborative workshops, honest conversations, and insightful lectures, we will lay the trackwork for shaping a successful future that is inclusive, sustainable, and purpose driven.</p>
+            </section>
+
+            <section class="track-section governance-section">
+                <div class="track-content">
+                    <h3 class="track-title">Governance</h3>
+                    <p class="track-text">This track is intended for the VP externals (or equivalent position) from each engineering society. Sessions will include general assemblies, conference bidding, and elections facilitated by the CFES.</p>
+                </div>
+            </section>
+
+            <section class="track-section professional-section">
+                <div class="track-content">
+                    <h3 class="track-title">Professional Engineer</h3>
+                    <p class="track-text">This track aims to equip delegates with essential tools for success as young professionals, helping them navigate shifting trends and address emergent challenges. Sessions will explore the intersection between technical work and social implications, highlighting a holistic human centric approach to engineering.</p>
+                </div>
+            </section>
+
+            <section class="track-section leadership-section">
+                <div class="track-content">
+                    <h3 class="track-title">Leadership</h3>
+                    <p class="track-text">This track will focus on leading with intentionality by exploring appropriate and sustainable leadership strategies that each delegate can implement within their communities. Discussions will center on collaborative approaches to leadership, fostering inclusivity within teams, and the value of diverse perspectives, ultimately encouraging delegates to reflect not only on how to lead, but also on why they lead and who they impact.</p>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -35,9 +64,39 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: white;
-            color: #2a2a2a;
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, rgba(81, 38, 133, 0.02) 1px, transparent 1px),
+                linear-gradient(rgba(81, 38, 133, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 188, 212, 0.08) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .navbar {
@@ -47,117 +106,219 @@
             right: 0;
             z-index: 1000;
             background: #512685;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid rgba(0, 188, 212, 0.3);
             padding: 15px 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .nav-link {
             color: white;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 8px 20px;
+            padding: 8px 15px;
             position: relative;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
-        .nav-link::before {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 50%;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            background: white;
-            transform: translateX(-50%);
-            transition: width 0.4s ease;
+            background: #00BCD4;
+            transition: width 0.3s ease;
         }
 
-        .nav-link:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
+        .nav-link:hover::after {
             width: 100%;
         }
 
         .about-page {
+            padding-top: 60px;
             min-height: 100vh;
-            background: white;
+            background: transparent;
+            position: relative;
+            z-index: 1;
         }
 
-        .page-title {
-            text-align: center;
-            font-size: 48px;
-            font-weight: 900;
-            color: white;
-            background: #512685;
-            padding: 30px 0;
-            margin: 0;
-            margin-top: 65px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .about-content {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 0 40px;
-        }
-
-        .about-text {
-            font-size: 24px;
-            line-height: 1.8;
-            color: #2a2a2a;
-            text-align: justify;
-        }
-
-        .image-container {
+        .about-banner {
             width: 100%;
-            padding: 0;
-            background: white;
-            margin-top: 60px;
+            height: 250px;
+            overflow: hidden;
             position: relative;
         }
 
         .about-image {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            margin: 0;
+            background: linear-gradient(135deg, #512685 0%, #00BCD4 100%);
         }
 
-        .image-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: 60%;
-            background-image: url('images/celc logo.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.30;
-            pointer-events: none;
+        .content-wrapper {
+            position: relative;
             z-index: 1;
         }
 
+        .what-is-celc {
+            background: white;
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 0;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
+            color: #512685;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .what-is-celc p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #000000;
+            text-align: justify;
+        }
+
+        .conference-theme {
+            background: white;
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: #512685;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .conference-theme p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #000000;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: #512685;
+            font-weight: 700;
+        }
+
+        .track-section {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .track-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.75);
+            z-index: 1;
+        }
+
+        .governance-section {
+            background-image: url('images/image6.JPG');
+        }
+
+        .professional-section {
+            background-image: url('images/image7.JPG');
+        }
+
+        .leadership-section {
+            background-image: url('images/image8.JPG');
+        }
+
+        .track-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 60px;
+            background: transparent;
+            border-radius: 0;
+        }
+
+        .governance-section .track-content {
+            margin-left: 0;
+        }
+
+        .professional-section .track-content {
+            margin-left: auto;
+            margin-right: 0;
+            text-align: right;
+        }
+
+        .leadership-section .track-content {
+            margin-left: 0;
+        }
+
+        .track-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .track-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #000000;
+        }
+
+        @media (max-width: 1024px) {
+            .governance-section .track-content,
+            .leadership-section .track-content {
+                margin-left: 0;
+            }
+            
+            .professional-section .track-content {
+                margin-left: auto;
+                margin-right: 0;
+                text-align: right;
+            }
+        }
+
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 32px;
-                padding: 20px 0;
+            .about-banner {
+                height: 150px;
             }
 
             .nav-container {
@@ -165,18 +326,53 @@
             }
 
             .nav-link {
-                font-size: 12px;
-                padding: 6px 15px;
+                font-size: 11px;
+                padding: 6px 10px;
             }
 
-            .about-content {
-                margin: 40px auto;
-                padding: 0 20px;
+            .what-is-celc,
+            .conference-theme {
+                padding: 50px 30px;
             }
 
-            .about-text {
-                font-size: 18px;
-                line-height: 1.6;
+            .main-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+
+            .what-is-celc p,
+            .conference-theme p {
+                font-size: 17px;
+                text-align: left;
+            }
+
+            .track-section {
+                min-height: 350px;
+                padding: 60px 0;
+            }
+
+            .track-content {
+                padding: 40px 30px;
+                margin: 0 20px !important;
+                max-width: 100%;
+            }
+            
+            .professional-section .track-content {
+                text-align: right;
+            }
+
+            .track-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .track-text {
+                font-size: 16px;
             }
         }
     </style>

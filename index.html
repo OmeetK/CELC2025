@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CELC</title>
+    <title>CELC 2026</title>
     <link rel="stylesheet" href="celc.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href=schedule.html class="nav-link">Schedule</a>
-            <a href=about.html class="nav-link">About</a>
+            <a href="schedule.html" class="nav-link">Schedule</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="team.html" class="nav-link">Team</a>
+            <a href="sponsors.html" class="nav-link">Sponsors</a>
         </div>
     </nav>
+
+    <div class="image-top">
+        <div class="image-track">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image4.jpg" alt="CELC">
+            <img src="images/image5.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image4.jpg" alt="CELC">
+            <img src="images/image5.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+        </div>
+    </div>
 
     <main class="hero">
         <div class="number left">20</div>
@@ -22,18 +45,41 @@
         <div class="number right">26</div>
     </main>
 
+    <div class="image-bottom">
+        <div class="image-track">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image4.jpg" alt="CELC">
+            <img src="images/image5.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image5.jpg" alt="CELC">
+            <img src="images/image4.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+            <img src="images/image4.jpg" alt="CELC">
+            <img src="images/image5.jpg" alt="CELC">
+            <img src="images/image1.jpg" alt="CELC">
+            <img src="images/image2.jpg" alt="CELC">
+            <img src="images/image3.jpg" alt="CELC">
+        </div>
+    </div>
+
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
             background: #512685;
             color: white;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
@@ -42,65 +88,103 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             padding: 15px 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
 
         .nav-link {
             color: white;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 8px 20px;
+            padding: 8px 15px;
             position: relative;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
-        .nav-link::before {
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 50%;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
-            background: white;
-            transform: translateX(-50%);
-            transition: width 0.4s ease;
+            background: #00BCD4;
+            transition: width 0.3s ease;
         }
 
-        .nav-link:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::before {
+        .nav-link:hover::after {
             width: 100%;
+        }
+
+        .image-top,
+        .image-bottom {
+            width: 100%;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0;
+            position: relative;
+            margin: 0;
+        }
+
+        .image-top {
+            margin-top: 60px;
+        }
+
+        .image-bottom {
+            margin-bottom: 0;
+        }
+
+        .image-track {
+            display: flex;
+            gap: 0;
+            animation: scroll 30s linear infinite;
+        }
+
+        .image-track img {
+            height: 150px;
+            width: auto;
+            object-fit: cover;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .hero {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 40px;
+            min-height: calc(100vh - 360px);
+            padding: 40px 20px;
             position: relative;
-            color: white;
         }
 
         .number {
-            font-size: 50vh;
+            font-size: 45vh;
             font-weight: 900;
             color: white;
-            opacity: 1;
+            opacity: 0.25;
             user-select: none;
             position: absolute;
             line-height: 0.85;
@@ -109,46 +193,35 @@
         }
 
         .number.left {
-            left: calc(50% - 45vw);
-            color: white;
+            left: 5vw;
         }
 
         .number.right {
-            right: calc(50% - 45vw);
-            color: white;
+            right: 5vw;
         }
 
         .logo-container {
             max-width: 35vw;
-            width: 95%;
-            max-height: 60vh;
+            width: 35%;
+            max-height: 55vh;
             display: flex;
             align-items: center;
-            color: white;
+            z-index: 10;
         }
 
         .logo {
             width: 100%;
             height: auto;
-            max-height: 60vh;
+            max-height: 55vh;
             object-fit: contain;
-            filter: drop-shadow(0 20px 40px rgba(255, 255, 255, 0)) brightness(5);
+            filter: drop-shadow(0 15px 50px rgba(0, 0, 0, 0.7));
             animation: fadeIn 1.2s ease-in;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -158,23 +231,35 @@
 
         @media (max-width: 768px) {
             .number {
-                font-size: 60px;
+                font-size: 30vh;
+                opacity: 0.2;
             }
             
             .number.left {
-                left: 20px;
+                left: 2vw;
             }
             
             .number.right {
-                right: 20px;
+                right: 2vw;
             }
             
             .logo-container {
-                max-width: 300px;
+                max-width: 50vw;
+                width: 50%;
             }
 
             .nav-container {
-                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-link {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+
+            .image-track img {
+                height: 100px;
+                width: auto;
             }
         }
     </style>
